@@ -15,7 +15,7 @@ export const CardAPI:React.FC<ICardAPI> = ({image,name,ki,affiliation,gender,rac
         return (      
             
             // dados.map(item,index) => ()
-            <div className="h-[36rem] w-80 rounded-xl shadow-lg m-6 ">
+            <div className="h-[36rem] w-80 rounded-xl shadow-xl m-6 ">
                 {/* header */}
                 <div className="h-3/6 w-full z-20 flex justify-center items-center">
                     <Image src={image} width={3000} height={3000} alt="sla" className="transition ease-in-out delay-300  hover:-translate-y-1 rounded-t-xl w-[12rem] h-[20rem] hover:scale-125 z-10"/>
