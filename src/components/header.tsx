@@ -5,15 +5,16 @@ import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ROUTES } from "@/constants/routes";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: ROUTES.home },
+    { name: "Fetch", href: ROUTES.fetch },
+    { name: "Axios", href: ROUTES.axios },
+    { name: "Server", href: ROUTES.server },
   ]
 
   return (

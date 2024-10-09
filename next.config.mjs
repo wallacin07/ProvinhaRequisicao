@@ -5,4 +5,26 @@ const nextConfig = {
     },
 };
 
+rewrites: () => {
+    return [
+            {
+            source:"/",
+            destination:"/app",
+            },
+            {
+                source:"/fetch",
+                destination:"/fetch",
+                },
+            {
+                source:"/axios",
+                destination: "/axios"
+                },
+            {
+                source:"/server",
+                destination: "/server"
+            },
+        ]
+    }
+
+
 export default nextConfig;
