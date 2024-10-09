@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Code, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ROUTES } from "@/constants/routes";
@@ -19,12 +19,11 @@ export default function Header() {
 
   return (
     <header className="w-full bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container ml-5 px-1">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold">
-              Logo
-            </Link>
+          <div className="flex-shrink-0 text-2xl flex font-bold">   
+              <Code className="mt-2 mr-4"></Code>
+              <p>Prova</p>
           </div>
 
          

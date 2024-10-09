@@ -1,7 +1,7 @@
 "use client"
 
 import { CardAPI } from "@/components/cardAPI";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import {api} from "@/constants/apis"
 
 interface IData{
@@ -11,7 +11,8 @@ interface IData{
   ki: string;
   affiliation: string;
   gender: string;
-  race: string
+  race: string;
+  maxKi: string;
 
 }
 
@@ -35,18 +36,26 @@ const Axios = () => {
 
   return (
    <>
-    <div className="flex flex-col justify-center items-center">
-    <input type="text" onChange={(e) => setPage(e.target.value)} value={page} placeholder="Insira a Pagina" />
-    {erro && <h5>Não foi possivel buscar os dados</h5>}
-    {data.map((item,index)=>{
-      return(
-        
-           <div key={index} className="mt-20">
-            <CardAPI name={item.name} image={item.image} ki={item.ki} affiliation={item.affiliation} gender={item.gender} race={item.race}></CardAPI>
-           </div>
-      )
-    })}
-    </div>
+
+
+    <Suspense fallback={<p>Loading Images...</p>}>
+    
+      <input type="text" onChange={(e) => setPage(e.target.value)} value={page} placeholder="Insira a Pagina" />
+      <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap">
+      {erro && <h5>Não foi possivel buscar os dados</h5>}
+      {data.map((item,index)=>{
+        return(
+          
+            <div key={index} className="mt-20">
+              <CardAPI name={item.name} image={item.image} ki={item.ki} affiliation={item.affiliation} gender={item.gender} race={item.race} MaxKi={item.maxKi}></CardAPI>
+            </div>
+        )
+      })}
+      </div>
+    
+    
+    </Suspense>
+
    </>
 
   );

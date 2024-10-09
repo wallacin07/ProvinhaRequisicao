@@ -11,7 +11,7 @@ interface IData{
   affiliation: string;
   gender: string;
   race: string
-
+  maxKi: string
 }
 
 const Home = () => {
@@ -38,8 +38,8 @@ const Home = () => {
     {characters.map((item,index)=>{
       return(
         
-           <div key={index} className="mt-20">
-            <CardAPI name={item.name} image={item.image} ki={item.ki} affiliation={item.affiliation} gender={item.gender} race={item.race}></CardAPI>
+           <div key={index} className="mt-20 rounded-xl">
+            <CardAPI name={item.name} image={item.image} ki={item.ki} affiliation={item.affiliation} gender={item.gender} race={item.race} MaxKi={item.maxKi}></CardAPI>
            </div>
       )
     })}
