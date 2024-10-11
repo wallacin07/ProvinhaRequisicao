@@ -1,9 +1,7 @@
 import Image from "next/image";
 import bg from "@/assets/89980.webp"
 
-// interface ITransform{
-//     id : [];
-// }
+
 
 interface ICardAPI{
     name: string;
@@ -13,8 +11,7 @@ interface ICardAPI{
     gender: string;
     race: string;
     MaxKi: string;
-    
-  
+
   }
 
 export const CardAPI:React.FC<ICardAPI> = ({image,name,ki,affiliation,gender,race, MaxKi}) =>
