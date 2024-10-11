@@ -14,16 +14,16 @@ rewrites: () => {
             destination:"/app",
             },
             {
-                source:"/fetch",
-                destination:"/fetch",
+                source:"/primeira-rota",
+                destination:"/primeira-rota",
                 },
             {
-                source:"/axios",
-                destination: "/axios"
+                source:"/segunda-rota",
+                destination: "/segunda-rota"
                 },
             {
-                source:"/server",
-                destination: "/server"
+                source:"/terceira-rota",
+                destination: "/terceira-rota"
             },
         ]
     }

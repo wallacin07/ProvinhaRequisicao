@@ -1,6 +1,6 @@
 export enum ROUTES {
     home = "/",
-    fetch = "/fetch",
-    axios = "/axios",
-    server = "/server"
+    fetch = "/primeira-rota",
+    axios = "/segunda-rota",
+    server = "/terceira-rota"
 }
