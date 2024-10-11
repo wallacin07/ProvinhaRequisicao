@@ -22,7 +22,7 @@ export default function Footer({
     }
 
   return (
-    <footer>
+    <footer >
         <Pagination>
             <PaginationContent>
 
@@ -32,27 +32,52 @@ export default function Footer({
 
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(1)}  >1</PaginationLink>
+                    {currentPage === 1 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(1)} isActive>1</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(1)} >1</PaginationLink> 
+                    }
+                    
                 </PaginationItem>
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(2)}>2</PaginationLink>
+                    {currentPage === 2 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(2)} isActive>2</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(2)} >2</PaginationLink> 
+                    }
                 </PaginationItem>
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(3)}>3</PaginationLink>
+                    {currentPage === 3 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(3)} isActive>3</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(3)} >3</PaginationLink> 
+                    }
                 </PaginationItem>
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(4)}>4</PaginationLink>
+                    {currentPage === 4 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(4)} isActive>4</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(4)} >4</PaginationLink> 
+                    }
                 </PaginationItem>
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(5)}>5</PaginationLink>
+                    {currentPage === 5 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(5)} isActive>5</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(5)} >5</PaginationLink> 
+                    }
                 </PaginationItem>
 
                 <PaginationItem>
-                    <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(6)}>6</PaginationLink>
+                    {currentPage === 6 ? 
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(6)} isActive>6</PaginationLink> 
+                        :
+                        <PaginationLink  className="hover:bg-slate-200 hover:cursor-pointer delay-200" href={"#"} onClick={() => setPage(6)} >6</PaginationLink> 
+                    }
                 </PaginationItem>
 
                 <PaginationItem>

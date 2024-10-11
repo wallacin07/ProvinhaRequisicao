@@ -20,7 +20,7 @@ export default function RootLayout({
         className={`min-h-screen h-auto  antialiased`}
       >
         <Header></Header>
-        <div className="mt-16">
+        <div className="mt-16 bg-zinc-400">
         {children}
 
         </div>

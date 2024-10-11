@@ -1,6 +1,10 @@
 import Image from "next/image";
 import bg from "@/assets/89980.webp"
 
+// interface ITransform{
+//     id : [];
+// }
+
 interface ICardAPI{
     name: string;
     image: string;
@@ -9,6 +13,7 @@ interface ICardAPI{
     gender: string;
     race: string;
     MaxKi: string;
+    
   
   }
 
@@ -17,10 +22,11 @@ export const CardAPI:React.FC<ICardAPI> = ({image,name,ki,affiliation,gender,rac
         return (      
             
             // dados.map(item,index) => ()
-            <div className="h-[36rem] w-[22rem] rounded-3xl shadow-xl m-6 ">
+            <div className="h-[36rem] w-[22rem] rounded-3xl shadow-xl m-6 rounded-t-xl">
                 {/* header */}
-                <div className={`h-3/6 w-full z-20 flex justify-center items-center rounded-t-xl `}>
-                    <Image src={image} width={3000} height={3000} priority alt="sla" className="transition ease-in-out delay-300  hover:-translate-y-1 rounded-t-xl w-[11rem] h-[20rem] hover:scale-125 z-10"/>
+                <div className={`h-3/6 w-full z-20 flex justify-center items-center rounded-b-xl `}>
+                    <Image src={image} width={3000} height={3000} priority alt="sla" className="absolute transition ease-in-out delay-300  hover:-translate-y-1 rounded-t-xl w-auto h-[20rem] hover:scale-125 z-10"/>
+                    <Image src={"https://web.dragonball-api.com/images-compress/89980.webp"} width={3000} height={3000} priority alt="sla" className="rounded-t-xl h-full w-full" />
                 </div>
 
                 {/* Body */}

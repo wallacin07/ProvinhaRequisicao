@@ -44,7 +44,7 @@ const fetchNative = () => {
 
    <Suspense fallback={<p>Loading Images...</p>}>
    
-      <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center">
+      <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center w-full h-full">
       {characters.map((item,index)=>{
         return(
           
