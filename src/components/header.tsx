@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Code, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { ROUTES } from "@/constants/routes";
 
 export default function Header() {
@@ -48,7 +48,8 @@ export default function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[240px] sm:w-[300px]">
+              <SheetTitle className="sr-only">My API</SheetTitle>
+              <SheetContent side="left" className="w-[240px] sm:w-[300px]" aria-describedby={undefined}>
                 <nav className="flex flex-col space-y-4 mt-4">
                   {menuItems.map((item) => (
                     <Link

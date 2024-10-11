@@ -3,6 +3,7 @@
 import { CardAPI } from "@/components/cardAPI";
 import { Suspense, useEffect, useState } from "react";
 import {api} from "@/constants/apis"
+import Footer from "@/components/footer";
 
 interface IData{
   id: string;
@@ -20,9 +21,14 @@ const Axios = () => {
 
   const [data, setData] = useState<IData[]>([])
   const [erro, setErro] = useState<boolean>(false)
-  const [page, setPage] = useState<string>("1")
+  const [page, setPage] = useState<number>(1)
 
   useEffect(() => {
+    if(page > 6){
+      setPage(6)
+    }else if(page < 1){
+      setPage(1);
+    }
     api.get(`/characters?page=${page}`).then((res) => {
       setErro(false)
       setData(res.data.items)
@@ -40,7 +46,6 @@ const Axios = () => {
 
     <Suspense fallback={<p>Loading Images...</p>}>
     
-      <input type="text" onChange={(e) => setPage(e.target.value)} value={page} placeholder="Insira a Pagina" />
       <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap">
       {erro && <h5>Não foi possivel buscar os dados</h5>}
       {data.map((item,index)=>{
@@ -52,7 +57,7 @@ const Axios = () => {
         )
       })}
       </div>
-    
+      <Footer currentPage={page} totalPages={6} setPage={setPage }></Footer>
     
     </Suspense>
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { CardAPI } from "@/components/cardAPI";
+import Footer from "@/components/footer";
 import { Suspense, useEffect, useState } from "react";
 
 interface IData{
@@ -17,18 +18,24 @@ interface IData{
 const fetchNative = () => {
 
   const [characters, setCharacters] = useState<IData[]>([])
-
+  const [page, setPage] = useState<number>(1)
 
   useEffect(() => {
+          if(page > 6){
+            setPage(6)
+          }else if(page < 1){
+            setPage(1);
+          }
       const load = async () => {
-          const res = await fetch("https://dragonball-api.com/api/characters");
+          
+          const res = await fetch(`https://dragonball-api.com/api/characters?page=${page}`);
           const data = await res.json(); 
           setCharacters(data.items);
           console.log(data.items);
           
       }
       load();
-  }, [])
+  }, [page])
 
 
 
@@ -47,7 +54,7 @@ const fetchNative = () => {
         )
       })}
       </div>
-   
+      <Footer currentPage={page} totalPages={6} setPage={setPage}></Footer>
    </Suspense>
    </>
 
